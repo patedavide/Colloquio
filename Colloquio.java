@@ -1,8 +1,24 @@
+import java.util.Date;
+
 public class Colloquio {
     private Date giorno;
     private String alunno;
     private String genitore;
-    public String classe;
+    public  String classe;
+
+    public  Colloquio() {
+        giorno = null;
+        alunno = null;
+        classe = null;
+        genitore = null;
+    }
+
+    public  Colloquio(Date giorno, String alunno, String classe, String genitore) {
+        this.giorno = giorno;
+        this.alunno = alunno;
+        this.classe = classe;
+        this.genitore = genitore;
+    }
 
     public void setGiorno(Date giorno) {
         this.giorno = giorno;
@@ -36,8 +52,8 @@ public class Colloquio {
         return genitore;
     }
 
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public boolean equals(Colloquio colloquioConfrontato) {
+        return alunno == colloquioConfrontato.alunno  && classe == colloquioConfrontato.classe && genitore == colloquioConfrontato.genitore;
     }
 
     public String toString() {
